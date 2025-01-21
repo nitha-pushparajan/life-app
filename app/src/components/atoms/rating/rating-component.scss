@@ -1,0 +1,8 @@
+.rating-icon {
+  svg {
+    @apply h-[22px] w-[22px] transition-all;
+    * {
+      @apply transition-all;
+    }
+  }
+}
