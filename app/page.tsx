@@ -22,6 +22,7 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         setProducts((products: ProductCardProps[]) => (skip !==0 ? [...products, ...(data.data.products)] : data.data.products));
+        // total products count is missing in the API, so adding temporary fix to set more state
         if (data.data.products.length === paginationItems) {
           setMore(true);
         }
