@@ -5,12 +5,14 @@ import Link from 'next/link'
 import { ProductCardProps } from './productCard.types';
 import { CartButtons } from '../../organisms/products/cartButtons';
 
+const placeholder = 'svg/not-available.svg.svg';
+
 const ProductCard: FC<ProductCardProps> = ({
   slug, id, title, images, sale
 }) => {
   return <Link href={`products/${slug}`} key={id} className="group relative bg-white p-5 rounded-[5px] bg-white cursor-pointer h-full flex flex-col">
   <div className="relative w-full pb-[100%]">
-    <Image alt="product.title" src={images?.featured_image } fill objectFit="contain" />
+    <Image alt="product.title" src={images?.featured_image || placeholder} fill style={{objectFit: "contain"}} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
   </div>
   <div className="mb-[15px]">
     <div className="text-[18px] leading-[26px] text-[#747272]">

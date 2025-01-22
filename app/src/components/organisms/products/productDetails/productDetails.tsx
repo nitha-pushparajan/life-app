@@ -1,9 +1,12 @@
+
+
 import { FC } from 'react';
 import { ProductDetailsProps } from './productDetails.types';
 import { Price } from '@/app/src/components/atoms/price';
 import { Rating } from '@/app/src/components/atoms/rating';
 import { PageTitle } from '@/app/src/components/atoms/pageTitle';
 import { ProductSwiper } from '@/app/src/components/molecules/ProductSwiper';
+import {HTMLContent} from '@/app/src/components/atoms/htmlContent';
 import { CartButtons } from '../cartButtons';
 
 
@@ -11,7 +14,7 @@ const ProductDetails: FC<ProductDetailsProps> = ({ images, productDetails, price
   return (
     <>
       <div className='grid grid-cols-1 md:grid-cols-2 bg-white w-full'>
-        <div>
+        <div className={`${images.length ? '':'bg-[#e5e7eb]'}`}>
           <ProductSwiper images={images} title={productDetails?.title} />
         </div>
         <div className='px-[20px] md:px-[40px] lg:px-[60px] py-[20px] md:py-[40px] lg:py-[80px] box-border w-full'>
@@ -29,12 +32,13 @@ const ProductDetails: FC<ProductDetailsProps> = ({ images, productDetails, price
               <Rating value={rating?.rating} count={rating?.count} />
             </div>
             <CartButtons id={productDetails.id} />
-            <p className='text-[#373737] text-[14px] px-[5px]' dangerouslySetInnerHTML={{ __html: productDetails?.short_description }} />
+            <HTMLContent content={productDetails?.short_description} className='text-[#373737] text-[14px] px-[5px]' />
           </div>
         </div>
       </div>
       <div className='my-[25px] bg-white px-[20px] md:px-[40px] lg:px-[60px] py-[20px] md:py-[40px] lg:py-[80px] box-border w-full rounded-[5px]'>
-        <div className='description' dangerouslySetInnerHTML={{ __html: productDetails?.description }}></div>
+        <HTMLContent content={productDetails?.description} />
+        {/* <div dangerouslySetInnerHTML={{ __html: productDetails?.description }}></div> */}
       </div>
     </>
   );

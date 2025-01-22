@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import ProductCard from '../ProductCard';
+import { CartProvider } from '@/app/src/lib/context/CartContext';
 
 // Mocked Props
 const productProps = {
@@ -17,14 +18,14 @@ const productProps = {
 describe('ProductCard', () => {
   
   test('renders product title', () => {
-    render(<ProductCard {...productProps} />);
+    render(<CartProvider><ProductCard {...productProps} /></CartProvider>);
     const titleElement = screen.getByText(/Product Title/i);
     expect(titleElement).toBeInTheDocument();
   });
 
 
   test('renders correct product prices', () => {
-    render(<ProductCard {...productProps} />);
+    render(<CartProvider><ProductCard {...productProps} /></CartProvider>);
     
     // Check for regular price and offer price (Sale Price)
     const regularPrice = screen.getByText('AED 100');
@@ -35,7 +36,7 @@ describe('ProductCard', () => {
   });
 
   test('renders link to the product detail page with correct href', () => {
-    render(<ProductCard {...productProps} />);
+    render(<CartProvider><ProductCard {...productProps} /></CartProvider>);
     const linkElement = screen.getByRole('link');
     expect(linkElement).toHaveAttribute('href', 'products/product-1');
   });

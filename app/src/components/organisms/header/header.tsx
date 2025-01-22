@@ -5,13 +5,10 @@ import CartIcon from '@/app/src/components/icons/cart';
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 import { useCart } from '@/app/src/lib/context/CartContext';
 
 const Header: React.FC = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const searchQuery = searchParams.get('query');
   const { cart } = useCart();
   const totalCartItems = cart.reduce((total, product) => total + product.quantity, 0);
   const [searchKey, setSearchKey] = useState('');
