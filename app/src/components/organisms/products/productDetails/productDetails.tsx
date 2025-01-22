@@ -1,6 +1,6 @@
+'use client'; 
 
-
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { ProductDetailsProps } from './productDetails.types';
 import { Price } from '@/app/src/components/atoms/price';
 import { Rating } from '@/app/src/components/atoms/rating';
@@ -11,6 +11,12 @@ import { CartButtons } from '../cartButtons';
 
 
 const ProductDetails: FC<ProductDetailsProps> = ({ images, productDetails, priceDetails, rating }) => {
+
+  useEffect(() => {
+    // Ensure the page is scrolled to the top on component mount
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <div className='grid grid-cols-1 md:grid-cols-2 bg-white w-full'>
