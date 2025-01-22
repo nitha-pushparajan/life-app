@@ -19,7 +19,7 @@ const ProductDetails: FC<ProductDetailsProps> = ({ images, productDetails, price
         </div>
         <div className='px-[20px] md:px-[40px] lg:px-[60px] py-[20px] md:py-[40px] lg:py-[80px] box-border w-full'>
           <PageTitle title={productDetails?.title} />
-          <div className="md:pt-[50px] md:pb-[30px] pt-[25px] pb-[50px]">
+          <div className="md:pt-[35px] lg:pt-[50px] pt-[25px]">
             <div className="flex justify-between items-center">
               <div className="flex-col items-start flex">
                 <Price currency={priceDetails?.currency} regular_price={priceDetails.regular_price} offer_price={priceDetails.offer_price} />
@@ -38,7 +38,6 @@ const ProductDetails: FC<ProductDetailsProps> = ({ images, productDetails, price
       </div>
       <div className='my-[25px] bg-white px-[20px] md:px-[40px] lg:px-[60px] py-[20px] md:py-[40px] lg:py-[80px] box-border w-full rounded-[5px]'>
         <HTMLContent content={productDetails?.description} />
-        {/* <div dangerouslySetInnerHTML={{ __html: productDetails?.description }}></div> */}
       </div>
     </>
   );

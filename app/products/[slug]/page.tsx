@@ -1,5 +1,3 @@
-// app/products/[slug]/page.tsx
-
 import { ProductDetails } from '@/app/src/components/organisms/products/productDetails';
 import ProductPageLoader from '@/app/src/components/molecules/Loader/productPageLoader';
 import Head from 'next/head';
@@ -25,7 +23,7 @@ const ProductsPage = async ({ params }: {
   const productDetails = productData?.product_details;
   const images = productDetails?.images?.gallery_images || [];
   const priceDetails = productDetails?.sale || {};
-  const rating = productData?.rating;
+  const rating = productData?.ratings;
   return (
     <div className="min-h-screen p-5 md:p-10 lg:p-20 bg-[#F7F7F7]">
       <Head>

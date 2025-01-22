@@ -27,7 +27,7 @@ body {
   font-size: 25px;
 }
 
-.description > * {
+.html-content > * {
   padding: 5px 0;
   color: #373737;
 }

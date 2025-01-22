@@ -18,7 +18,7 @@ const Header: React.FC = () => {
 
   const onSearch = (event: any) => {
     event.preventDefault();
-    const newPath = `/?query=${searchKey}`;
+    const newPath = `/search/?query=${searchKey}`;
     setSearchKey('');
     router.push(newPath);
   }
