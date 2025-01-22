@@ -5,14 +5,12 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 // Define the structure of a product in the cart
 interface CartProduct {
   id: string;
-  // title: string;
   quantity: number;
 }
 
 // Define the context data structure
 interface CartContextType {
   cart: CartProduct[];
-  count: number;
   addToCart: (id: string) => void;
   removeFromCart: (id: string) => void;
 }
@@ -27,7 +25,6 @@ interface CartProviderProps {
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const [cart, setCart] = useState<CartProduct[]>([]);
-  const [count, setCount] = useState<number>(0);
 
   // Add product to the cart
   const addToCart = (id: string) => {
@@ -73,7 +70,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, count, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

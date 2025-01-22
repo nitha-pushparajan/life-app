@@ -8,7 +8,7 @@ export interface ProductsGridProps {
   /**
    * Callback function for infinite scroll
    */
-  fetchCallback?: any;
+  fetchCallback?: () => void;
   /**
    * Set if there is more data available to fetch
    */

@@ -16,7 +16,7 @@ const ProductSwiper: FC<ProductSwiperProps> = ({
   images,
   title = ""
 }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null); // State for managing the thumbnail swiper
+  const [thumbsSwiper, setThumbsSwiper] = useState(null); // State for managing the thumbnail swiper
   
   return (
     <div className="product-swiper px-[20px] md:pr-0 md:pl-[40px] lg:pl-[60px] py-[20px] md:py-[40px] lg:py-[80px]">
@@ -29,7 +29,7 @@ const ProductSwiper: FC<ProductSwiperProps> = ({
         // pagination={{ clickable: true }}
         thumbs={{ swiper: thumbsSwiper }} // Sync with thumbnail swiper
       >
-        {images.map((image: any) => (
+        {images.map((image) => (
           <SwiperSlide key={image.image}>
             <div className="relative w-full pb-[100%]">
               <Image
@@ -53,7 +53,7 @@ const ProductSwiper: FC<ProductSwiperProps> = ({
         watchSlidesProgress={true}
         className="mt-4"
       >
-        {images.map((image: any) => (
+        {images.map((image) => (
           <SwiperSlide key={image.image}>
             <div className="relative w-full pb-[100%]">
               <Image

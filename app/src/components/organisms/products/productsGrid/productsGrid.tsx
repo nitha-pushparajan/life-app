@@ -26,7 +26,7 @@ const ProductsGrid: FC<ProductsGridProps> = ({
       )
     }
   >
-    {products?.map((product: any, index: number) => (
+    {products?.map((product) => (
       <ProductCard {...product} key={product.id} />
     ))}
   </InfiniteScroll>

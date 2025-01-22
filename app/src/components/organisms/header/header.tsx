@@ -12,11 +12,11 @@ const Header: React.FC = () => {
   const { cart } = useCart();
   const totalCartItems = cart.reduce((total, product) => total + product.quantity, 0);
   const [searchKey, setSearchKey] = useState('');
-  const onChangeHandler = (e: any) => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchKey(e.target.value);
   }
 
-  const onSearch = (event: any) => {
+  const onSearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const newPath = `/search/?query=${searchKey}`;
     setSearchKey('');
