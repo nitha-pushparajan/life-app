@@ -26,7 +26,7 @@ const Price: FC<PriceProps> = ({
         </p>
       </div>
       {regular_price !== offer_price &&
-        <div className="pl-2.5 line-through decoration-[#969191]">
+        <div className="pl-2.5 line-through decoration-[#969191]" data-testid="old-price">
           <p className="text-sm leading-5 text-[#969191] line-all body1">
           {currency} {offer_price}
           </p>

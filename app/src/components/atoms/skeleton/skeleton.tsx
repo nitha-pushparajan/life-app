@@ -18,7 +18,7 @@ const Skeleton: FC<SkeletonProps> = ({ className, fullWidth, variant }) => {
     }),
   };
 
-  return <div className={classNames.loader} />;
+  return <div role="presentation" className={classNames.loader} />;
 };
 
 export default Skeleton;

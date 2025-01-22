@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Price } from '@/app/src/components/atoms/price'
 import Link from 'next/link'
 import { ProductCardProps } from './productCard.types';
+import { CartButtons } from '../../organisms/products/cartButtons';
 
 const ProductCard: FC<ProductCardProps> = ({
   slug, id, title, images, sale
@@ -16,8 +17,9 @@ const ProductCard: FC<ProductCardProps> = ({
       <h2>{title}</h2>
     </div>
   </div>
+  <Price currency={sale.currency} regular_price={sale.regular_price} offer_price={sale.offer_price} />
   <div className='mt-auto'>
-    <Price currency={sale.currency} regular_price={sale.regular_price} offer_price={sale.offer_price} />
+    <CartButtons id={id} />
   </div>
 </Link>
 };
