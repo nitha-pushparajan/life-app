@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Price } from '@/app/src/components/atoms/price'
 import Link from 'next/link'
 import { ProductCardProps } from './productCard.types';
-import { CartButtons } from '../../organisms/products/cartButtons';
+import { CartButtons } from '../../organisms/cartButtons';
 
 const placeholder = 'svg/not-available.svg.svg';
 

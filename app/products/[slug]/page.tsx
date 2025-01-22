@@ -1,4 +1,4 @@
-import { ProductDetails } from '@/app/src/components/organisms/products/productDetails';
+import { ProductDetails } from '@/app/src/components/organisms/productDetails';
 import ProductPageLoader from '@/app/src/components/molecules/Loader/productPageLoader';
 import Head from 'next/head';
 import React from 'react';

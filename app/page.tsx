@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import { ProductsGrid } from "@/app/src/components/organisms/products/productsGrid";
+import { ProductsGrid } from "@/app/src/components/organisms/productsGrid";
 import { PageTitle } from '@/app/src/components/atoms/pageTitle'
 import {ProductCardProps} from '@/app/src/components/molecules/productCard'
 import Head from 'next/head';

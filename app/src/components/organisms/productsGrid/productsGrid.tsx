@@ -2,7 +2,7 @@ import { FC } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ProductCardLoader from '@/app/src/components/molecules/Loader/productCardLoader';
 
-import { ProductCard } from '../../../molecules/productCard';
+import { ProductCard } from '../../molecules/productCard';
 import { ProductsGridProps } from './productsGrid.types';
 
 const ProductsGrid: FC<ProductsGridProps> = ({
